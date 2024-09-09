@@ -1,0 +1,313 @@
+1a) 
+#include<stdio.h>
+
+int main ()
+{
+    unsigned int n = 4000000000;
+    printf("%u\n",n);
+
+    return 0;
+
+}
+
+b)
+#include<stdio.h>
+
+int main()
+{
+    int a;
+
+    scanf("%d", &a);
+    printf("%d\n", a);
+
+    return 0;
+
+}
+
+c)
+#include<stdio.h>
+
+int main()
+{
+    
+    printf("%d\n", 4);
+    printf("%d\n", 2);
+    
+    return 0;
+}
+
+d)
+#include<stdio.h>
+
+int main()
+{
+    int a;
+
+    scanf("%d", &a);
+    printf("%d\n", a);
+
+    return 0;
+}
+
+2a)
+#include<stdio.h>
+
+int main()
+{
+    int N1, N2, N3;
+
+    printf("\n\nInserir numeros:", N1);
+    scanf("%d", &N1);
+
+    printf("\n\nInserir numeros:", N2);
+    scanf("%d", &N2);
+
+    printf("\n\nInserir numeros:", N3);
+    scanf("%d", &N3);
+
+    printf("\n\nOrdem inversa = %d, %d, %d", N3, N2, N1);
+
+}
+
+b)
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    char nome[50];
+
+    printf("\n\nOlá eu sou o N1, como é seu nome ?");
+
+    printf("\n\nInserir nome :");
+    scanf("%s", &nome);
+
+    printf("\n\nBem vindo ao clube: %s", nome);
+
+    return 0;
+}
+
+c)
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    char nome[50];
+    int id, d;
+
+    printf("\n\nInserir nome :");
+    scanf("%s", &nome);
+
+
+    printf("\n\nInserir idade :");
+    scanf("%d", &id);
+
+    d = id * 365;
+    printf("\n\nSua idade em dias : %d", d);
+
+    return 0;
+}
+
+d)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    int r, a;
+
+    printf("\n\nInsira o valor do raio :");
+    scanf("%d", &r);
+
+    a = 2 * 3.14 * pow(r,2);
+    printf("\n\nValor da área é : %d", a);
+
+    return 0;
+}
+
+e)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    float L, h, lt, p;
+
+    printf("\n\nValor da largura da parede :");
+    scanf("%f", &L);
+
+    printf("\n\n,Valor da altura da parede :");
+    scanf("%f", &h);
+
+    p = L * h;
+
+    lt = (p * 300) / 2000;
+    printf("\n\nValor de latas de tinta : %f", lt);
+
+}
+
+f)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float F, C;
+
+    printf("\n\nValor da temperatura em graus Farenheit : ");
+    scanf("%f", &F);
+
+    C = (( 5.0 / 9.0 ) * ( F - 32 ));
+    printf("\n\nValor da temperatura em graus Centígrados : %f", C);
+}
+
+g)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float P, V, T, M;
+
+    printf("\n\nInsira a pressão do pneu : ");
+    scanf("%f", &P);
+
+    printf("\n\nInsira a volume do pneu : ");
+    scanf("%f", &V);
+
+    printf("\n\nInsira a temperatura do pneu : ");
+    scanf("%f", &T);
+
+    M = (P * V) / (0.37 * (T + 460.0));
+    printf("\n\nValor da massa de ar do pneu : %f", M);
+}
+
+h)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float a1, a10, r;
+
+    printf("\n\nEntre com o valor de a1 : ");
+    scanf("%f", &a1);
+
+    printf("\n\nEntre com o valor da razão : ");
+    scanf("%f", &r);
+
+    a10 = a1 + 9.0 * r;
+    printf("\n\nValor do Enésimo termo da PA : %f", a10);
+
+}
+
+i)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float a, b, c, delta, x1, x2;
+
+    printf("\n\nEntre com o valor de a : ");
+    scanf("%f", &a);
+
+    printf("\n\nEntre com o valor de b : ");
+    scanf("%f", &b);
+
+    printf("\n\nEntre com o valor de c : ");
+    scanf("%f", &c);
+
+    delta = pow(b,2) - 4 * a * c;
+    printf("\n\nValor de delta : %f", delta);
+
+    x1 = -b + sqrt(delta);
+    printf("\n\nValor de x1 : %f", x1);
+
+    x2 = -b - sqrt(delta);
+    printf("\n\nValor de x2 : %f", x2);
+
+}
+
+j)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    int a, b, c, d, t;
+
+    printf("\n\nQuantidades de notas de 1 real : ");
+    scanf("%d", &a);
+
+    printf("\n\nQuantidades de notas de 10 reais : ");
+    scanf("%d", &b);
+
+    printf("\n\nQuantidades de notas de 50 reais : ");
+    scanf("%d", &c);
+
+    printf("\n\nQuantidades de notas de 100 reais : ");
+    scanf("%d", &d);
+
+    t = a * 1 + b * 10 + c * 50 + d * 100;
+    printf("\n\nValor total de dinheiro : %d", t);
+}
+
+l)
+#include<stdio.h>
+#include<locale.h>
+#include<math.h>
+
+#include <stdio.h>
+
+int main() {
+    int valor, n100, n50, n10, n5, n1;
+
+    printf("Digite o valor em dinheiro: ");
+    scanf("%d", &valor);
+
+    n100 = valor / 100;
+    valor = valor % 100;
+
+    n50 = valor / 50;
+    valor = valor % 50;
+
+    n10 = valor / 10;
+    valor = valor % 10;
+
+    n5 = valor / 5;
+    valor = valor % 5;
+
+    n1 = valor;
+
+    printf("Notas de 100: %d\n", n100);
+    printf("Notas de 50: %d\n", n50);
+    printf("Notas de 10: %d\n", n10);
+    printf("Notas de 5: %d\n", n5);
+    printf("Notas de 1: %d\n", n1);
+
+}
