@@ -1,0 +1,363 @@
+WHILE e DO - WHILE
+EXERCICIO 1)
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+
+    setlocale(LC_ALL, "Portuguese");
+    int a, temp;
+
+    do {
+        printf("Insira a temperatura do ambiente: ");
+        scanf("%d", &temp);
+
+        while (temp > 25 || temp < 20) {
+            if (temp > 25) {
+                printf("\nTemperatura alta");
+            } else {
+                printf("\nTemperatura baixa");
+            }
+
+            printf("\nInsira a nova temperatura do ambiente: ");
+            scanf("%d", &temp);
+        }
+        printf("Temperatura dentro do intervalo ideal.\n");
+
+        printf("\nDigite 1 para nova temperatura \nDigite 2 para encerrar o programa: ");
+        scanf("%d", &a);
+
+    } while (a == 1);
+
+    printf("Programa encerrado.\n");
+    return 0;
+}
+
+EXERCICIO 2)
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    int a;
+    float c;
+
+    printf("Insira a porcentagem de combustivel no tanque (0 a 100%): ");
+    scanf("%f", &c);
+
+    while (c <= 100.0) {
+        if (c <= 15.0) {
+            printf("Alerta - Combustivel abaixo de 15%.\n");
+        } else {
+            printf("Nivel de combustivel: %.2f%. \n", c);
+        }
+
+        printf("Insira o nivel de combustivel atualizado (0 a 100%%): ");
+        scanf("%f", &c);
+
+    printf("Tanque cheio.\n");
+
+    return 0;
+ }
+
+}
+
+EXERCICIO 3)
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    int passos, soma=0, a;
+
+    do {
+        printf("\nInsira o número de passos:");
+        scanf("%d", &passos);
+
+        soma += passos; //acumula passos, atualiza nm dentro do loop
+
+        printf("Soma de passos até o momento: %d", soma);
+
+        printf("Adicionar mais uma entrada? (\n1 = sim; \n0 = não)");
+        scanf("%d", &a);
+
+
+    if(soma >= 10000)
+    {
+        printf("\nMeta diária alcançada!");
+    }
+    else
+    {
+        printf("\nSe esforçe para chegar a 10000 passos!");
+    }
+
+    }
+    while (a==1);
+
+    printf("\n\nTotal de passos do dia: %d", soma);
+
+    return 0;
+
+}
+
+EXERCICIO 4)
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float deposito;
+
+    printf("DEPOSITO INICAL MINIMO 500RS. \nInsira o valor do depósito:");
+    scanf("%f", &deposito);
+
+    while(deposito<500)
+    {
+        printf("Valor insuficiente. Insira um novo valor de depósito:");
+        scanf("%f", &deposito);
+    }
+
+    printf("Valor suficiente. Inscrição aceita.");
+
+    return 0;
+}
+
+EXERCICIOS DO WHILE
+EXERCICIO 1) AJUDA DA DEBORA
+#include<stdio.h>
+#include<locale.h>
+#include<string.h> // comparar variaveis string
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float dist;
+    char dir[10]; //cada palavra = 1 variavel char c/ caracteres
+    char sair[] = "sair"; //smp a msm palavra
+
+    printf("Programa para controle do movimento do robô.");
+    printf("Digite direções para movê-lo. Digite 'sair' para parar o programa.");
+
+    do {
+        printf("Em que direção deseja mover o robô? \n(Esquerda, direita, frente ou trás?)");
+        scanf("%s", &dir);
+
+          if (strcmp(dir, sair) == 0) { //strcmp compara strings; se dir = sair, expressao = 0
+            printf("Programa encerrado.\n");
+            break;
+        }
+
+        printf("Quantos metros deseja mover o robô?");
+        scanf("%f", &dist);
+
+        printf("Movendo o robô %.2f metros para %s.\n", dist, dir);
+
+
+    }while(1); // conta como (dir != 0)
+return 0;
+}
+
+EXERCICIO 2) AJUDA DA DEBORA
+
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float dist;
+    char continuar;
+
+    printf("Leitura de sensores de distância");
+    printf("\nDigite 0 caso queira encerrar a leitura.");
+
+    do {
+        printf("\nInsira a distância medida pelo sensor: ");
+        scanf("%f", &dist);
+
+        if(dist<10)
+        {
+            printf("\nDistância = %.2f - Valor abaixo de 10 cm!", dist);
+            break;
+        }
+    printf("\nDistância = %.2f", dist);
+
+    printf("\nContinuar a leitura? (s = sim; n = não)");
+    scanf("%c", &continuar);
+
+    if (continuar == 'n' || continuar == 'N')
+    {
+        printf("Programa encerrado.");
+        break;
+    }
+
+    }while(1);
+
+return 0;
+}
+
+EXERCICIO 3)
+
+#include<stdio.h>
+#include<locale.h>
+
+int main(){
+    setlocale(LC_ALL, "portuguese");
+
+    int atividade, continuar;
+    printf("Selecione uma atividade:");
+
+    printf("(1) Ligar a lâmpada");
+    printf("(2) Tocar um som");
+    printf("(3) Mover um braço");
+
+    do{
+          switch(atividade)
+          {
+          case 1:
+            printf("O robô irá trocar a lâmpada.");
+          case 2:
+            printf("O robô irá tocar música.");
+          case 3:
+            printf("O robô irá mover um braço.");
+          }
+
+          printf("\nDeseja selecionar outra atividade? (Digite '1')");
+          printf("\nDeseja encerrar o programa? (Digite '0')");
+          scanf("%d", &continuar);
+
+    } while(continuar == 1);
+
+    return 0;
+
+}
+
+EXERCICIO 4)
+
+#include<stdio.h>
+#include<locale.h>
+
+int main()
+{
+    setlocale(LC_ALL, "portuguese");
+
+    float bateria;
+    int a;
+
+        do{
+
+    printf("Monitoramento de bateria do robô");
+    printf("Insira o percentual da bateria do robô:");
+    scanf("%f", &bateria);
+
+    while(bateria<100) {
+
+        if(bateria<20)
+        {
+            printf("Bateria baixa! Recarregue o robô.");
+        }
+        else
+        {
+            printf("Nível da bateria: %f", bateria);
+        }
+
+    printf("Insira o percentual atualizado da bateria: ");
+    scanf("%f", &bateria);
+
+}
+
+     printf("Nível da bateria: %f. Robô totalmente carregado.", bateria);
+
+     printf("Deseja inserir uma nova leitura? (1 = Sim, 0 = Não");
+     scanf("%d", &a);
+
+        }while (a==1);
+
+     printf("Programa encerrado.");
+
+     return 0;
+
+}
+
+EXERCICIO 5)
+#include <stdio.h>
+#include <locale.h>
+
+int main() {
+    setlocale(LC_ALL, "portuguese");
+
+    // Posição inicial do robô
+    int x = 2, y = 2; // Coordenadas do centro do grid
+    char dir;
+
+    printf("Simulação de Navegação Autônoma (limitado a grid 5x5).\n");
+    printf("Comandos:\n");
+    printf("c - mover para cima\n");
+    printf("b - mover para baixo\n");
+    printf("e - mover para esquerda\n");
+    printf("d - mover para direita\n");
+    printf("p - parar o programa\n");
+    printf("\nO robô começa na posição (%d, %d).\n", x, y);
+
+    do {
+        printf("\nDigite o comando para mover o robô: ");
+        scanf(" %c", &dir); 
+
+        switch (dir) {
+            case 'c': // Para cima
+                if (y > 0) {
+                    y--; // Altera posição como vetor
+                } else {
+                    printf("Movimento inválido! O robô não pode sair do grid.\n");
+                }
+                break;
+
+            case 'b': // Para baixo
+                if (y < 4) {
+                    y++;
+                } else {
+                    printf("Movimento inválido! O robô não pode sair do grid.\n");
+                }
+                break;
+
+            case 'e': // Para esquerda
+                if (x > 0) {
+                    x--;
+                } else {
+                    printf("Movimento inválido! O robô não pode sair do grid.\n");
+                }
+                break;
+
+            case 'd': // Para direita
+                if (x < 4) {
+                    x++;
+                } else {
+                    printf("Movimento inválido! O robô não pode sair do grid.\n");
+                }
+                break;
+
+            case 'p': // Encerrar
+                printf("Programa encerrado pelo usuário.\n");
+                break;
+
+            default: // Comando inválido
+                printf("Comando inválido! Use c, b, e, d ou p.\n");
+        }
+
+        //posição atual
+        if (dir != 'p') {
+            printf("Posição atual do robô: (%d, %d).\n", x, y);
+        }
+    } while (dir != 'p'); // Repete enquanto o comando não for 'p'
+
+    return 0;
+}
+
